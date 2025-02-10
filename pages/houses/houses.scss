@@ -110,7 +110,8 @@ header {
 
 @mixin title-content {
   margin-top: 15vh;
-  font-size: 2rem;
+  margin-bottom: 5vh;
+  font-size: 3rem;
   text-transform: uppercase;
 }
 
@@ -118,6 +119,11 @@ header {
 
 .services-main {
   height: 100vh;
+
+  .title {
+    @include title-content;
+    color: $main-color;
+  }
 }
 
 // Проекты
@@ -151,4 +157,59 @@ header {
 .contacts-main {
   height: 100vh;
   background: $main-color;
+
+  a {
+    color: $third-color;
+  }
+
+  .title {
+    @include title-content;
+  }
+
+  .map iframe {
+    width: 100%;
+    height: 100%;
+  }
+
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+
+    .contacts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 2fr;
+      grid-column-gap: 1rem;
+      grid-row-gap: 2rem;
+
+      .title-tags {
+        font-size: 1.4rem;
+        color: $third-color;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+      }
+
+      .tags {
+        text-transform: uppercase;
+      }
+
+      .socials-icon {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        .icon {
+          width: 2rem;
+          &:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+
+
+
+
 }
