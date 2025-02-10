@@ -8,6 +8,7 @@ $main-font: 'Advent Pro', serif;
 
 *, ::after, ::before {
   box-sizing: border-box;
+  display: block;
 }
 
 html, root, body, div, span, a, p, ul, li, button, h1, h2, h3, h4, h5 {
@@ -46,6 +47,8 @@ header {
   align-items: center;
   background: $third-color;
   z-index: 10;
+  opacity: 0.2;
+  border-bottom: 0.2rem solid $main-color;
 
   .main-logo-color {
     stroke: $main-color;
@@ -105,6 +108,12 @@ header {
   }
 }
 
+@mixin title-content {
+  margin-top: 15vh;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
 // Услуги
 
 .services-main {
@@ -116,16 +125,30 @@ header {
 .projects-main {
   height: 100vh;
   background: $main-color;
+
+  .title {
+    @include title-content;
+  }
 }
 
 // О компании
 
 .about-main {
+  height: 100vh;
 
+  .title {
+    @include title-content;
+    color: $main-color;
+  }
+
+  .content {
+    background: $two-color;
+  }
 }
 
 // Контакты
 
 .contacts-main {
-
+  height: 100vh;
+  background: $main-color;
 }
