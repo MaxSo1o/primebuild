@@ -1,0 +1,131 @@
+$main-color: #004964;
+$two-color: #00b6f9;
+$third-color: #fff;
+
+$main-font: 'Advent Pro', serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap');
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+html, root, body, div, span, a, p, ul, li, button, h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-family: $main-font;
+  font-weight: 600;
+  user-select: none;
+  color: $third-color;
+
+  a {
+    color: $main-color;
+    text-decoration: none;
+    transition: color 0.4s;
+
+    &:hover {
+      color: $two-color;
+    }
+  }
+}
+
+.container {
+  max-width: 1250px;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  background: $third-color;
+  z-index: 10;
+
+  .main-logo-color {
+    stroke: $main-color;
+  }
+
+  .menu-header {
+    max-width: 1250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-menu {
+    height: 6vh;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  li {
+    font-size: 1.1rem;
+    padding: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    display: inline-block;
+    list-style: none;
+    text-transform: uppercase;
+  }
+}
+
+// Тело
+
+.main-container {
+  width: 100%;
+
+}
+
+// Интро
+
+.intro-container {
+  width: 100%;
+  position: relative;
+
+  .intro {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .intro-info {
+    top: 400px;
+    font-size: 4rem;
+    text-transform: uppercase;
+    position: absolute;
+  }
+}
+
+// Услуги
+
+.services-main {
+  height: 100vh;
+}
+
+// Проекты
+
+.projects-main {
+  height: 100vh;
+  background: $main-color;
+}
+
+// О компании
+
+.about-main {
+
+}
+
+// Контакты
+
+.contacts-main {
+
+}

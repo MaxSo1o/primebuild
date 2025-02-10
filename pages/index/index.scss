@@ -1,0 +1,203 @@
+$main-color: #004964;
+$two-color: #00b6f9;
+$third-color: #fff;
+
+$main-font: 'Sofia Sans Condensed', serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&display=fallback');
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+html, root, body, div, span, a, p, ul, li, button, h1, h2, h3, h4, h5 {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ outline: 0;
+ font-size: 14px;
+ font-family: $main-font;
+ user-select: none;
+ color: $third-color;
+
+ a {
+   color: $third-color;
+   text-decoration: none;
+   transition: color 0.4s;
+
+   &:hover {
+     color: $two-color;
+   }
+ }
+}
+
+//Шапка
+
+.header {
+  background: $main-color;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1.3rem;
+  padding: 0 1rem;
+
+  .left {
+    display: flex;
+    flex-direction: row;
+    color: $third-color;
+
+    .logo {
+      height: 6vh;
+      width: 6vh;
+    }
+
+    .info{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 1.5rem;
+
+      .title {
+        text-transform: uppercase;
+        font-size: 2rem;
+      }
+
+      .tag {
+        text-transform: uppercase;
+        color: $two-color;
+        font-size: 1.28rem;
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      font-size: 1.35rem;
+    }
+  }
+}
+
+//Центр
+
+.body-links {
+  display: grid;
+  height: 80vh;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: auto;
+
+  .link {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    max-height: 100vh;
+    text-align: center;
+    border: 1px solid $main-color;
+  }
+
+  .background {
+    display: block;
+    transition: all 2s ease;
+    opacity: 0.3;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+
+    &.show {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  }
+
+  .title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: $main-color;
+    line-height: 2.5rem;
+    text-transform: uppercase;
+    transition: all 1s ease;
+
+    &.show {
+      color: $third-color;
+      text-shadow: 1px 1px 2px #000;
+    }
+  }
+
+  .more {
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+    height: 5vh;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    opacity: 0.5;
+    background: $main-color;
+    transition: all 1s ease;
+    text-align: left;
+    color: $third-color;
+    align-items: center;
+
+
+    &.show {
+      width: 100%;
+      opacity: 1;
+    }
+
+    span {
+      font-size: 1.3rem;
+      margin-left: 2vw;
+      text-transform: uppercase;
+      text-wrap: nowrap;
+    }
+  }
+}
+
+// Подвал
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: $main-color;
+  padding: 1rem;
+  height: 10vh;
+
+  .info {
+    span {
+      font-size: 1.2rem;
+    }
+  }
+
+  .social {
+    .icon {
+      height: 4vh;
+      margin: 0 0.3vw;
+
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 1.2rem;
+    text-align: right;
+    a {
+      color: $two-color;
+      &:hover {
+        color: $third-color;
+      }
+    }
+  }
+}
